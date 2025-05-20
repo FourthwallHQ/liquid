@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>{{ product.name }}</title>
+  </head>
+  <body>
+    <h1>{{ product.name }}</h1>
+    <p>{{ product.description }}</p>
+    <p>Price: {{ product.price }}</p>
+
+    <h2>Categories</h2>
+    <ul>
+      {% for category in categories %}
+        <li>{{ category.name }}</li>
+      {% endfor %}
+    </ul>
+
+    <h2>Recommended Products</h2>
+    <ul>
+      {% for rec in recommendations %}
+        <li>{{ rec.name }} - {{ rec.price }}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
