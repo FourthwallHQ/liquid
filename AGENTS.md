@@ -1,0 +1,35 @@
+# Instructions
+- The user will provide a task involving this repository.
+- Wait for all terminal commands to finish before responding.
+- Follow the repo workflow and conventions described below when making changes.
+
+# Code Style
+- Ruby code must follow the RuboCop configuration in `.rubocop.yml` and `.rubocop_todo.yml`.
+- Use two spaces for indentation and keep lines under 120 characters.
+- Prepend files with `# frozen_string_literal: true` when creating new Ruby files.
+
+# Workflow
+- Always use Bundler when running Ruby commands:
+  - Install dependencies with `bundle install` if needed.
+  - Run the test suite with `bundle exec rake`. This runs unit/integration tests and RuboCop.
+  - Run style checks manually with `bundle exec rubocop` if necessary.
+- Use Rake tasks defined in the `Rakefile` for common operations:
+  - `bundle exec rake`        - default task, runs tests and RuboCop
+  - `bundle exec rake test`   - run test suite in strict and lax modes
+  - `bundle exec rake example` - run example server
+  - See `rake -T` for the full list.
+
+# Commit Guidelines
+- Keep commit messages concise; use the imperative mood ("Add feature" not "Added feature").
+- Do not amend existing commits or force push.
+- Ensure `git status` shows a clean working tree before finishing.
+
+# Additional Notes
+- Review `CONTRIBUTING.md` for project guidelines before submitting a PR.
+- The GitHub Actions workflow (`.github/workflows/liquid.yml`) mirrors the `bundle exec rake` command; local tests should match it.
+
+
+# Citations instructions
+- When referencing lines from files, use the format `F:<filepath>†L<start>-L<end>`.
+- When referencing terminal output, use the format `<chunk_id>†L<start>-L<end>`.
+- Provide citations in the final answer as needed.
