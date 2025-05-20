@@ -22,6 +22,8 @@ end
 
 group :development do
   gem "webrick"
+  gem "grpc"
+  gem "concurrent-ruby", require: "concurrent"
 end
 
 group :test do

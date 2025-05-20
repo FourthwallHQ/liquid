@@ -2,6 +2,8 @@
 
 ## 5.8.1 (unreleased)
 
+* Add `grpc` and `concurrent-ruby` to development dependencies [Codex]
+
 ## 5.8.1
 
 * Fix `{% doc %}` tag to be visitable [Guilherme Carreiro]
