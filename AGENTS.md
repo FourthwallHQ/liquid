@@ -28,6 +28,21 @@
 - Review `CONTRIBUTING.md` for project guidelines before submitting a PR.
 - The GitHub Actions workflow (`.github/workflows/liquid.yml`) mirrors the `bundle exec rake` command; local tests should match it.
 
+- Use `rg` (ripgrep) for searching the codebase:
+  - `rg "password" --type-list` lists available file types
+  - `rg "password" -t js -C 3` searches JavaScript files with context
+  - Add `-i` for case-insensitive search and `-g '!pattern'` to exclude paths
+- Generate RubyGems documentation for installed gems:
+  `bundle list | grep -E 'devise|pundit' | awk '{print $2}' | xargs gem rdoc --ri`
+  Browse the docs with `ri ClassName` or `ri gemname:ClassName`.
+- Search RDoc or YARD documentation with ripgrep:
+  `rg "def authenticate" ~/rdoc/ -g "*.html" --html -B 2 -A 5`
+  Searches generated docs (e.g., `~/rdoc/` or `./doc/`) and shows context around matches.
+  - `-g "*.html"` limits results to HTML files
+  - `--html` ignores tags and focuses on content
+  - `-B 2 -A 5` includes two lines before and five after each match
+  More specific than `ri` for locating implementations across gems.
+
 
 # Citations instructions
 - When referencing lines from files, use the format `F:<filepath>†L<start>-L<end>`.
