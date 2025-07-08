@@ -1,6 +1,7 @@
 # Liquid Change Log
 
-## 5.8.1 (unreleased)
+## 5.8.7
+* Expose body content in the `Doc` tag [James Meng]
 
 * Add `grpc` and `concurrent-ruby` to development dependencies [Codex]
 
